@@ -1,10 +1,11 @@
-package Controllers;
+package br.com.guilherme_dev.financial_application.Controllers;
 
-import Models.DTO.TransactionDTO;
-import Services.TransactionService;
+import br.com.guilherme_dev.financial_application.Models.DTO.TransactionDTO;
+import br.com.guilherme_dev.financial_application.Services.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,5 +22,11 @@ public class TransactionController {
     public ResponseEntity<List<TransactionDTO>> findAll(){
         List<TransactionDTO> transactionDTOList = transactionService.findAll();
         return ResponseEntity.ok().body(transactionDTOList);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<TransactionDTO> findById(@PathVariable Long id){
+        TransactionDTO transactionDTO = transactionService.findById(id);
+        return ResponseEntity.ok().body(transactionDTO);
     }
 }

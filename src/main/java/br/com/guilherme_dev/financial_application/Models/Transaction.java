@@ -1,4 +1,4 @@
-package Models;
+package br.com.guilherme_dev.financial_application.Models;
 
 
 import jakarta.persistence.*;

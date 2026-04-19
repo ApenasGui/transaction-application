@@ -1,9 +1,10 @@
-package Models.DTO;
+package br.com.guilherme_dev.financial_application.Models.DTO;
 
-import Models.Transaction;
+import br.com.guilherme_dev.financial_application.Models.Transaction;
 
 public class TransactionDTO {
 
+    private Long id;
     private String name;
     private String description;
 
@@ -14,10 +15,19 @@ public class TransactionDTO {
     public TransactionDTO(){}
 
     public TransactionDTO(Transaction transaction) {
+        this.id = transaction.getId();
         this.name = transaction.getName();
         this.description = transaction.getDescription();
         this.type = transaction.getType();
         this.amount = transaction.getAmount();
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {

@@ -1,7 +1,7 @@
-package Config;
+package br.com.guilherme_dev.financial_application.Config;
 
-import Models.Transaction;
-import Repositories.TransactionRepository;
+import br.com.guilherme_dev.financial_application.Models.Transaction;
+import br.com.guilherme_dev.financial_application.Repositories.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
